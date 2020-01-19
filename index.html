@@ -1,1 +1,20 @@
 <h1>My Name Is Rohit Lal</h1>
+<script type="text/javascript">
+
+function setup() {
+    var i=1;
+    var nextSong= "";
+    audioPlayer = document.getElementById('audio');
+    document.getElementById('audio').addEventListener('ended', function(){
+        i=i+1;
+        nextSong = "m"+i+".mp3";
+        audioPlayer.src = nextSong;
+        audioPlayer.load();
+        audioPlayer.play();     
+        }, false);
+
+}
+</script>
+<body onLoad="setup();">
+<audio id="audio"  src="m1.mp3" controls="controls" autoplay="autoplay" align=""> </audio>
+</body>
